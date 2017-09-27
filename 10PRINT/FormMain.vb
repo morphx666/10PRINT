@@ -36,7 +36,7 @@ Public Class FormMain
                                                g.SmoothingMode = Drawing2D.SmoothingMode.None
                                                g.InterpolationMode = Drawing2D.InterpolationMode.NearestNeighbor
 
-                                               For x As Integer = 0 To surface.Width - 1 Step segmentLength
+                                               For x As Integer = 0 To surface.Width - segmentLength - 1 Step segmentLength
                                                    If rnd.NextDouble() <= probability Then
                                                        g.DrawLine(Pens.White, x, y, x + segmentLength, y + segmentLength)
                                                    Else
