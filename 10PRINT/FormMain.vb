@@ -1,13 +1,14 @@
 ﻿Imports System.Threading
 
 Public Class FormMain
-    Private p As Point
-    Private surface As Bitmap
-    Private segmentLength As Integer = 12
+    Private segmentLength As Integer = 20
+    Private probability As Double = 0.43
     Private vertSpeed As Integer = 2
+    Private delay As Integer = 1000 / 60
+
+    Private surface As Bitmap
     Private syncObj As New Object()
     Private y As Integer
-    Private delay As Integer = 1000 / 60
 
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
@@ -36,7 +37,7 @@ Public Class FormMain
                                                g.InterpolationMode = Drawing2D.InterpolationMode.NearestNeighbor
 
                                                For x As Integer = 0 To surface.Width - 1 Step segmentLength
-                                                   If rnd.NextDouble() < 0.5 Then
+                                                   If rnd.NextDouble() <= probability Then
                                                        g.DrawLine(Pens.White, x, y, x + segmentLength, y + segmentLength)
                                                    Else
                                                        g.DrawLine(Pens.White, x + segmentLength, y, x, y + segmentLength)

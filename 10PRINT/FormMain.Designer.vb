@@ -28,8 +28,9 @@ Partial Class FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(761, 660)
+        Me.ClientSize = New System.Drawing.Size(784, 661)
         Me.Name = "FormMain"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "10 PRINT CHR$(205.5+RND(1));:GOTO 10"
         Me.ResumeLayout(False)
 
