@@ -10,6 +10,8 @@ Public Class FormMain
     Private syncObj As New Object()
     Private y As Integer
 
+    Private p As New Pen(Color.White, 2)
+
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SetStyle(ControlStyles.AllPaintingInWmPaint, True)
         Me.SetStyle(ControlStyles.OptimizedDoubleBuffer, True)
@@ -38,9 +40,9 @@ Public Class FormMain
 
                                                For x As Integer = 0 To surface.Width - segmentLength - 1 Step segmentLength
                                                    If rnd.NextDouble() <= probability Then
-                                                       g.DrawLine(Pens.White, x, y, x + segmentLength, y + segmentLength)
+                                                       g.DrawLine(p, x, y, x + segmentLength, y + segmentLength)
                                                    Else
-                                                       g.DrawLine(Pens.White, x + segmentLength, y, x, y + segmentLength)
+                                                       g.DrawLine(p, x + segmentLength, y, x, y + segmentLength)
                                                    End If
                                                Next
 
